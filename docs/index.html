@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Journey to Linux</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="_css/vue.css">
+  <link rel="icon" href="favicon.ico">
+</head>
+
+<body>
+  <div id="app">美好的事情正在发生 ...</div>
+  <script>
+    window.$docsify = {
+      name: 'Journey to Linux',
+      repo: 'https://github.com/Artessay/Journey-to-Linux.git',
+
+      coverpage: true,
+      autoHeader: true,
+      loadSidebar: true,
+      loadNavbar: true,
+      subMaxLevel: 2,
+      auto2top: true,
+      homepage: 'README.md',
+      themeColor: '#ED745E',
+      search: {
+        placeholder: {
+          '/': '搜索'
+        },
+        noData: {
+          '/': '找不到结果'
+        }
+      },
+      latex: {
+        inlineMath   : [['$', '$'], ['\\(', '\\)']], // default
+        displayMath  : [['$$', '$$']],               // default
+      },
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="_js/docsify.min.js"></script>
+  <script src="_js/search.js"></script>
+  <script src="_js/zoom-image.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-latex@0"></script>
+</body>
+
+</html>
