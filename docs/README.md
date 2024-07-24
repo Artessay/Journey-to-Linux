@@ -9,4 +9,5 @@
   * [GDB使用](gdb)
   * [后台运行](background)
   * [网络代理](proxy)
+  * [离线安装](offline)
 

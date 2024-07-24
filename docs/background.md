@@ -77,6 +77,32 @@ screen -r refined
 
 
 ```sh
-nohup python startup.py -a &
+nohup [command] &
+```
+
+例如，如果是一个Python程序，相应的命令可以为：`nohup python startup.py &`
+
+
+
+如果需要终止nohup程序，可以采用ps命令找到进程号，并配合kill命令结束进程。
+
+查询进程命令：
+
+```sh
+ps -aux | grep nohup
+```
+
+相关参数的含义为：
+
+*  a:显示所有程序 
+*  u:以用户为主的格式来显示 
+*  x:显示所有程序，不以终端机来区分
+
+
+
+终止进程：
+
+```sh
+kill -9 [pid]
 ```
 
