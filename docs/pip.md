@@ -11,6 +11,26 @@ pip install pip -U
 pip config set global.index-url https://mirrors.zju.edu.cn/pypi/web/simple
 ```
 
+### 导出和导入依赖文件
+
+pip提供了`pip freeze`和`pip install`命令，通过这两个命令可以导出和导入依赖文件。然而，`pip freeze`命令会将所有的依赖都导出，包括项目所没有使用到的依赖。
+
+为了最小化导出依赖项，我们可以使用`pipreqs`的第三方库来导出项目所使用的依赖并生成`requirements.txt`文件。
+
+由于`pipreqs`是第三方库，所以我们需要先安装`pipreqs`才能使用。
+
+```shell
+pip install pipreqs
+```
+
+随后，就可以通过`pipreqs`导出依赖项了。
+
+```shell
+pipreqs [project_path]
+```
+
+当我们需要在新的环境中重新安装相关依赖时，就可以通过`pip install -r requirements.txt`来安装。
+
 ### 常见问题
 
 如果你在采用pip安装过程中因为缓存空间不足而被killed的话，你可以通过如下命令解决：
