@@ -6,6 +6,7 @@
   * [网络管理](network)
   * [conda环境](conda)
   * [pip环境](pip)
+  * [nvm环境](nvm)
   * [GDB使用](gdb)
   * [后台运行](background)
   * [网络代理](proxy)
