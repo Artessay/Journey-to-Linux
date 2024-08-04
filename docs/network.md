@@ -31,3 +31,13 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 
 ssh localhost
 ```
+
+
+
+如果此时你还不能实现免密登录，则可能是相关文件和目录的权限没有正确设置。你可以通过以下命令设置相应权限。
+
+```sh
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+```
+
