@@ -20,6 +20,16 @@ usermod -G SSHD_USER aloha # 将用户 aloha 加入到新的分组 SSHD_USER
 
 如果你需要为一个普通用户添加sudo权限，你可以按照如下步骤进行操作。
 
+**方法1：**
+
+在有sudo权限的账号下直接使用如下命令添加：
+
+```sh
+sudo usermod -a -G sudo [username]
+```
+
+**方法2：**
+
 首选，切换到root用户下。
 
 ```sh
