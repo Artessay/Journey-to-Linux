@@ -8,6 +8,7 @@
   * [pip环境](pip)
   * [nvm环境](nvm)
   * [GDB使用](gdb)
+  * [Hadoop平台](hadoop)
   * [后台运行](background)
   * [网络代理](proxy)
   * [离线安装](offline)
