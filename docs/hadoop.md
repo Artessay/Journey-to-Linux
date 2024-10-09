@@ -65,6 +65,13 @@ source ~/.bashrc
 
 在`/usr/local/hadoop/etc/hadoop/`目录中，修改以下配置文件：
 
+* **hadoop-env.sh**: 指定JAVA_HOME以及其他所需的环境变量
+
+```sh
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+export HADOOP_SSH_OPTS="-p <your-ssh-port>" # 如果使用非默认的SSH端口，需要修改
+```
+
 * **core-site.xml**: 设置HDFS的namenode地址。
 
 ```xml
@@ -76,7 +83,7 @@ source ~/.bashrc
 </configuration>
 ```
 
-* **hdfs-site.xml**: 设置HDFS的namenode地址和数据块大小。
+* **hdfs-site.xml**: 设置HDFS的节点数量。
 
 ```xml
 <configuration>
@@ -84,13 +91,16 @@ source ~/.bashrc
         <name>dfs.replication</name>
         <value>1</value>
     </property>
+</configuration>
+```
+
+* **mapred-site.xml**: 指定JobTracker的地址
+
+```xml
+<configuration>
     <property>
-        <name>dfs.namenode.name.dir</name>
-        <value>file:///usr/local/hadoop/hdfs/namenode</value>
-    </property>
-    <property>
-        <name>dfs.datanode.data.dir</name>
-        <value>file:///usr/local/hadoop/hdfs/datanode</value>
+        <name>mapred.job.tracker</name>
+        <value>localhost:9010</value>
     </property>
 </configuration>
 ```
