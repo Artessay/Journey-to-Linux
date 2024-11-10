@@ -234,6 +234,8 @@ Spark是Apache基金会的一个开源项目，用于在集群上执行数据并
 
 这里，我们以Spark 3.5.3版本为例，介绍如何安装Spark。
 
+### 安装与配置
+
 #### 下载Spark
 
 从Apache Spark 官方网站下载最新的 Spark 版本，解压后放入`/usr/local/Spark`目录下。
@@ -299,3 +301,36 @@ distData.reduce((a, b) => a + b)
 ```
 
 如果一切正常，上述命令会输出15，这表明您的Spark已经可以运行作业了。
+
+### PySpark 示例程序
+
+#### 平均数计算
+
+```python
+from pyspark import SparkContext
+
+def main():
+    # 初始化SparkContext
+    sc = SparkContext("local", "Average Calculator")
+    
+    # 创建一个数字列表
+    numbers = [1, 2, 3, 4, 5]
+    
+    # 并行化数据创建RDD
+    numbers_rdd = sc.parallelize(numbers)
+    
+    # 使用reduce计算总和和数量
+    total_and_count = numbers_rdd.map(lambda number: (number, 1)).reduce(
+        lambda a, b: (a[0] + b[0], a[1] + b[1])
+    )
+    
+    # 计算平均值
+    average = total_and_count[0] / total_and_count[1]
+    print(f"The average is: {average}")
+    
+    # 停止SparkContext
+    sc.stop()
+
+if __name__ == "__main__":
+    main()
+```
