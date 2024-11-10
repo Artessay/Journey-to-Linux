@@ -227,3 +227,75 @@ hdfs dfs -cat /output/part-r-00000
 
 输出结果是一个单词和该单词出现的次数的键值对。
 这样，便完成了在Linux上部署Hadoop，并运行一个简单的WordCount程序了。
+
+## Spark
+
+Spark是Apache基金会的一个开源项目，用于在集群上执行数据并行计算。它提供了一种编程模型，用于在分布式环境中处理数据。Spark支持多种编程语言，包括Scala、Java、Python和R。
+
+这里，我们以Spark 3.5.3版本为例，介绍如何安装Spark。
+
+#### 下载Spark
+
+从Apache Spark 官方网站下载最新的 Spark 版本，解压后放入`/usr/local/Spark`目录下。
+
+```sh
+wget https://dlcdn.apache.org/spark/spark-3.5.3/spark-3.5.3-bin-hadoop3.tgz
+tar -zxvf spark-3.5.3-bin-hadoop3.tgz
+sudo mv spark-3.5.3-bin-hadoop3.tgz /usr/local/spark
+```
+
+#### 配置环境变量
+
+```bash
+export SPARK_HOME=/usr/local/spark
+export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+```
+
+#### 配置Spark
+
+* **spark-env.sh**: 设置所需的环境变量。
+
+首先，复制示例配置文件：
+
+```bash
+cp $SPARK_HOME/conf/spark-env.sh.template $SPARK_HOME/conf/spark-env.sh
+```
+
+然后，配置相关内容：
+
+```bash
+export HADOOP_HOME=/usr/local/hadoop
+export HADOOP_CONF_DIR=/usr/local/hadoop/etc/hadoop/
+export LD_LIBRARY_PATH=$HADOOP_HOME/lib/native:$LD_LIBRARY_PATH
+```
+
+#### 启动Spark
+
+```bash
+cd /usr/local/spark/sbin
+./start-all.sh
+```
+
+启动Spark后，可以通过如下命令查看启动情况。如出现master、worker等进程，则表示Spark集群启动成功。
+
+```bash
+jps
+```
+
+#### 验证安装
+
+启动spark-shell
+
+```bash
+spark-shell
+```
+
+在spark-shell中输入以下代码，
+
+```scala
+val data = Array(1, 2, 3, 4, 5)
+val distData = sc.parallelize(data)
+distData.reduce((a, b) => a + b)
+```
+
+如果一切正常，上述命令会输出15，这表明您的Spark已经可以运行作业了。
