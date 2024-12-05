@@ -7,6 +7,7 @@
   * [conda环境](conda)
   * [pip环境](pip)
   * [nvm环境](nvm)
+  * [java环境](java)
   * [GDB使用](gdb)
   * [大数据平台](bigdata)
   * [后台运行](background)
