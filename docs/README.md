@@ -9,6 +9,7 @@
   * [nvm环境](nvm)
   * [java环境](java)
   * [GDB使用](gdb)
+  * [CMake安装](cmake)
   * [大数据平台](bigdata)
   * [后台运行](background)
   * [网络代理](proxy)
