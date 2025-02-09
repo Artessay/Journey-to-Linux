@@ -19,7 +19,7 @@ case "$ARCH" in
     aarch64|arm64) ARCH="arm64" ;;
     *) error "Unsupported architecture: $ARCH" ;;
 esac
-curl --fail --show-error --location --progress-bar "https://ollama.com/download/ollama-linux-${ARCH}$.tgz"
+curl --fail --show-error --location --progress-bar "https://ollama.com/download/ollama-linux-${ARCH}.tgz"
 ```
 
 2. Install the downloaded file via script.
@@ -37,7 +37,7 @@ Modify the script by changing the download command:
 # curl --fail --show-error --location --progress-bar \
 #     "https://ollama.com/download/ollama-linux-${ARCH}.tgz${VER_PARAM}" | \
 #     $SUDO tar -xzf - -C "$OLLAMA_INSTALL_DIR"
-$SUDO tar -xzf ./ollama-linux-${ARCH}.tgz -C "$OLLAMA_INSTALL_DIR" # for local installation
+$SUDO tar -xzf "./ollama-linux-${ARCH}.tgz" -C "$OLLAMA_INSTALL_DIR" # for local installation
 ```
 
 Then run the installation script:
