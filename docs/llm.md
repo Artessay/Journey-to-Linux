@@ -1,5 +1,18 @@
 ## Deploy LLM Model with WebUI Interface
 
+### Prerequisites
+
+| Params| Memory Usage           |
+| ----- | ---------------------- |
+| 1.5b  | 2G                     |
+| 7b    | 6G                     |
+| 8b    | 7G                     |
+| 14b   | 10G                    |
+| 32b   | 22G                    |
+| 70b   | 47G                    |
+| 671b  | 446G                   |
+
+
 ### Download and Install Ollama
 
 #### Online
