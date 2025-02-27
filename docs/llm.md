@@ -84,7 +84,7 @@ ollama create --model <model_name> --path <model_path>
 Edit the `/etc/systemd/system/ollama.service` file and add the following lines:
 
 ```sh
-Environment="OLLAMA_MODELS=/data/lt/1/.ollama/" # 设置模型下载的路径
+Environment="OLLAMA_MODELS=/data/qrh/model/ollama/" # 设置模型下载的路径
 Environment="OLLAMA_HOST=0.0.0.0"   # 所有网络可访问
 Environment="OLLAMA_ORIGINS=*"      # 所有网络可访问
 ```
