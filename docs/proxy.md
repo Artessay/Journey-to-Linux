@@ -193,3 +193,61 @@ chmod +x /etc/rc.d/rc.local
 ## 示例程序
 
 见Github仓库 [NAT Traversal](https://github.com/Artessay/NAT-Traversal)，里面包含了采用Python程序编写的简单的Client，Middle，以及Server的示例代码。你在修改了`client_config.example.py`的IP地址，并将其重命名为`client_config.py`之后，应该可以直接运行。
+
+
+## frp连接
+
+### 安装和部署
+
+可以参考[frp文档](https://gofrp.org/zh-cn/docs/)安装和部署。
+
+### 开机自动启动
+
+创建frpc的服务文件
+
+```bash
+sudo vim /etc/systemd/system/frpc.service
+```
+
+在文件中写入以下内容：
+
+```bash
+[Unit]
+# Service Description
+Description=frpc service 
+After=network.target syslog.target
+Wants=network.target
+
+[Service]
+Type=simple
+# Execution Command
+ExecStart=/path/to/frp/frpc -c /path/to/frp/frpc.toml
+
+[Install]
+WantedBy=multi-user.target
+```
+
+重载`systemctl`
+
+```bash
+sudo systemctl daemon-reload
+```
+
+设置开机自动启动
+
+```bash
+sudo systemctl enable frpc
+```
+
+使用`systemctl`命令管理frpc
+
+```bash
+#启动
+sudo systemctl start frpc 
+#关闭
+sudo systemctl stop frpc
+#重启
+sudo systemctl restart frpc
+#查看状态
+sudo systemctl status frpc
+```
