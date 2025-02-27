@@ -59,6 +59,25 @@ Then run the installation script:
 ./ollama_install.sh
 ```
 
+#### Install without Administrator Privileges
+
+If you are not a sudoer, the above execution command may failed. You can install ollama for yourself only.
+
+First, unzip the downloaded file:
+
+```sh
+tar -xvzf ollama-linux-amd64.tgz
+```
+
+Then, add the binary file to your PATH environment variable:
+
+```sh
+export PATH=$PATH:/home/qrh/data/download/ollama/bin
+export OLLAMA_HOST=0.0.0.0
+export OLLAMA_ORIGIN=*
+export OLLAMA_MODELS=/home/qrh/data/model/ollama
+```
+
 #### Pull Model and Run
 
 Pull the model.
