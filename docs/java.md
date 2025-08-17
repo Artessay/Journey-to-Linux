@@ -30,17 +30,17 @@ tar -zxvf jdk-21_linux-x64_bin.tar.gz -C /usr/local/java
 Add Java to PATH in `/etc/profile`:
 
 ```sh
-JAVA_HOME=/usr/local/java/jdk-21.0.4
+JAVA_HOME=/usr/local/java/jdk-21.0.8 # 21.0.8 is the version number, you should change it to the latest version
 PATH=$JAVA_HOME/bin:$PATH
 export JAVA_HOME PATH
 ```
 
-## Maven 3.9.8
+## Maven 3.9.11
 
 Download Maven
 
 ```sh
-wget https://dlcdn.apache.org/maven/maven-3/3.9.8/binaries/apache-maven-3.9.8-bin.tar.gz
+wget https://dlcdn.apache.org/maven/maven-3/3.9.11/binaries/apache-maven-3.9.11-bin.tar.gz
 ```
 
 Create folder for Maven:
@@ -52,13 +52,13 @@ mkdir -p /usr/local/maven
 Extract Maven:
 
 ```sh
-tar -zxvf apache-maven-3.9.8-bin.tar.gz -C /usr/local/maven
+tar -zxvf apache-maven-3.9.11-bin.tar.gz -C /usr/local/maven
 ```
 
 Add Maven to PATH in `/etc/profile`:
 
 ```sh
-MAVEN_HOME=/usr/local/maven/apache-maven-3.9.8
+MAVEN_HOME=/usr/local/maven/apache-maven-3.9.11
 PATH=$MAVEN_HOME/bin:$PATH
 export MAVEN_HOME PATH
 ```
