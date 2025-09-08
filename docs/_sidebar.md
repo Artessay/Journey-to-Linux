@@ -4,6 +4,7 @@
   * [权限管理](authority)
   * [目录管理](folder)
   * [网络管理](network)
+  * [磁盘管理](disk)
   * [conda环境](conda)
   * [pip环境](pip)
   * [nvm环境](nvm)
