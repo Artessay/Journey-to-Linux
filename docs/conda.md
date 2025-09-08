@@ -20,6 +20,16 @@ rm -rf ~/miniconda3/miniconda.sh
 
 上述命令执行完成后，我们就完成了miniconda的配置了。重新打开shell后，你就可以看到conda的显示。重新启动后，默认会进入base的环境。
 
+#### 错误排查
+
+有时候，服务器上存在管理员权限用户安装conda时可能会把我们的环境变量所污染，导致初始化bash的命令`~/miniconda3/bin/conda init bash`因为选择了错误的配置文件，导致conda的初始化命令没有正确执行。为此，我们可以通过如下命令来修正默认conda读取配置文件的路径：
+
+```shell
+export CONDA_EXE=/home/qrh/miniconda3/.condarc
+export CONDA_PREFIX=/home/qrh/miniconda3/.condarc
+export CONDA_PYTHON_EXE=/home/qrh/miniconda3/.condarc
+```
+
 ### 配置
 
 有时候，我们可能不希望一进入shell就看到conda的base环境，我们可以通过配置来取消默认启动base环境。取消后，你可以通过`conda activate base`来再进入base环境。
